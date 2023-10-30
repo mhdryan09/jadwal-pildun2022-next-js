@@ -1,6 +1,7 @@
 import React from "react";
 import { groupBy } from "lodash";
 import moment from "moment";
+import SectionRow from "./sectionRow";
 
 // fetch data - get matches
 const getMatches = async () => {
@@ -28,7 +29,7 @@ export default async function SectionList() {
       {/* ambil key baru kita mapping */}
       {Object.keys(matchesByDate).map((date, index) => (
         <div key={index}>
-
+          <SectionRow date={date} matches={matchesByDate[date]} />
         </div>
       ))}
 		</div>
